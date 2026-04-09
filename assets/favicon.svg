@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#2B3A27"/>
+  <!-- Letter L stylized as a light ray / glow -->
+  <text x="50%" y="54%" font-family="Georgia, serif" font-size="32" font-weight="400" fill="#B89A6A" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">L</text>
+  <!-- Subtle glow ring -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#B89A6A" stroke-width="1.5" opacity="0.4"/>
+  <!-- Small dot accent -->
+  <circle cx="44" cy="20" r="3" fill="#B89A6A" opacity="0.8"/>
+</svg>

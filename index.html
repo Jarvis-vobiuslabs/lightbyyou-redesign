@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light By U — Simple. Effective. Natural Glow. | Made in Canada</title>
+  <meta name="description" content="Simple, effective skincare that brings out your natural glow. Made in Canada. Fragrance-free formulas with Hyaluronic Acid and Ceramides for sensitive skin." />
+  <meta name="theme-color" content="#2B3A27" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jarvis-vobiuslabs.github.io/lightbyyou-redesign/" />
+  <meta property="og:title" content="Light By U — Simple. Effective. Natural Glow." />
+  <meta property="og:description" content="Simple, effective skincare that brings out your natural glow. Made in Canada. Fragrance-free formulas with Hyaluronic Acid and Ceramides." />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    :root {
+      --cream:      #FAF8F4;
+      --beige:      #EDE5D8;
+      --warm-gold:  #B89A6A;
+      --dark-gold:  #8C7250;
+      --forest:     #2B3A27;
+      --sage:       #6B8060;
+      --brown:      #3A2C1F;
+      --text:       #1C1C1E;
+      --text-muted: #6B6456;
+      --white:      #FFFFFF;
+      --border:     rgba(43,58,39,0.12);
+      --shadow:     0 4px 32px rgba(43,58,39,0.10);
+      --radius:     12px;
+      --radius-lg:  24px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ─── Scroll Reveal ────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── Typography ───────────────────────────────────── */
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.2; }
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); letter-spacing: -0.01em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+    p  { font-size: 1rem; line-height: 1.75; color: var(--text-muted); }
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─── Buttons ──────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--forest);
+      color: var(--white);
+      box-shadow: 0 2px 16px rgba(43,58,39,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--brown);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(43,58,39,0.30);
+    }
+    .btn-outline {
+      border: 1.5px solid var(--forest);
+      color: var(--forest);
+    }
+    .btn-outline:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-gold {
+      background: var(--warm-gold);
+      color: var(--white);
+      box-shadow: 0 2px 16px rgba(184,154,106,0.3);
+    }
+    .btn-gold:hover {
+      background: var(--dark-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(184,154,106,0.35);
+    }
+
+    /* ─── Container ────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 6rem 0; }
+
+    /* ─── Navigation ───────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(250,248,244,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    #nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--forest);
+      letter-spacing: 0.05em;
+    }
+    .nav-logo span { color: var(--warm-gold); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { margin-left: 1rem; }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--forest);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        left: 0; right: 0;
+        background: var(--cream);
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      .nav-links.open .nav-cta { display: block; margin-left: 0; }
+    }
+
+    /* ─── Hero ─────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--forest);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/images/hero.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.55;
+      transform: scale(1.05);
+      animation: heroZoom 18s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+        rgba(43,58,39,0.75) 0%,
+        rgba(43,58,39,0.35) 50%,
+        rgba(60,44,31,0.45) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 8rem 1.5rem 5rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-content h1 {
+      color: var(--white);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.2);
+    }
+    .hero-content p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge svg { width: 14px; height: 14px; fill: var(--warm-gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+      animation: scrollLine 1.8s ease infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ─── Trust Bar ────────────────────────────────────── */
+    #trust {
+      background: var(--forest);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+    .trust-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 22s linear infinite;
+      white-space: nowrap;
+    }
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .trust-item svg { width: 16px; height: 16px; fill: var(--warm-gold); flex-shrink: 0; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── Brand Promise ────────────────────────────────── */
+    #promise {
+      padding: 7rem 0;
+      text-align: center;
+    }
+    .promise-text {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .promise-text h2 { color: var(--forest); margin-bottom: 1.25rem; font-style: italic; }
+    .promise-text p { font-size: 1.05rem; max-width: 580px; margin: 0 auto 2.5rem; }
+    .promise-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      transition: var(--transition);
+    }
+    .pillar:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+    .pillar-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--beige);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .pillar-icon svg { width: 24px; height: 24px; fill: var(--forest); }
+    .pillar h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--forest); }
+    .pillar p { font-size: 0.88rem; line-height: 1.65; }
+
+    /* ─── Products ─────────────────────────────────────── */
+    #products {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-header h2 { color: var(--forest); margin-bottom: 0.75rem; }
+    .section-header p { max-width: 520px; margin: 0 auto; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+    .product-card {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.06);
+    }
+    .product-img {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: var(--beige);
+      position: relative;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 1.5rem;
+      transition: transform 0.5s ease;
+    }
+    .product-tag {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: var(--forest);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 50px;
+    }
+    .product-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 0.35rem;
+    }
+    .product-size {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .product-desc {
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--forest);
+      font-weight: 500;
+    }
+    .product-price .was {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-right: 0.3rem;
+    }
+    .product-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .product-btn svg { width: 18px; height: 18px; fill: var(--white); }
+    .product-btn:hover { background: var(--warm-gold); transform: scale(1.1); }
+
+    /* ─── Routine ───────────────────────────────────────  */
+    #routine {
+      padding: 7rem 0;
+      background: var(--beige);
+    }
+    .routine-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      font-weight: 300;
+      color: rgba(43,58,39,0.08);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -1rem auto 1.25rem;
+      box-shadow: 0 4px 16px rgba(43,58,39,0.12);
+    }
+    .step-icon svg { width: 28px; height: 28px; fill: var(--forest); }
+    .step h3 { color: var(--forest); margin-bottom: 0.5rem; }
+    .step p { font-size: 0.9rem; max-width: 240px; margin: 0 auto; }
+
+    /* ─── Social Proof ─────────────────────────────────── */
+    #social-proof {
+      padding: 7rem 0;
+      background: var(--cream);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: var(--transition);
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 0.85rem;
+    }
+    .stars svg { width: 16px; height: 16px; fill: var(--warm-gold); }
+    .review-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .reviewer-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--forest);
+    }
+    .reviewer-name { font-size: 0.83rem; font-weight: 600; color: var(--text); }
+    .reviewer-info { font-size: 0.75rem; color: var(--text-muted); }
+    .review-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      color: var(--sage);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    .review-tag svg { width: 12px; height: 12px; fill: var(--sage); }
+
+    /* Rating summary */
+    .rating-summary {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .rating-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      color: var(--forest);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .rating-stars { justify-content: center; margin-bottom: 0.75rem; }
+    .rating-count { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ─── About / Brand Story ──────────────────────────── */
+    #about {
+      padding: 7rem 0;
+      background: var(--forest);
+    }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    .about-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      text-align: center;
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--forest);
+      font-weight: 600;
+      line-height: 1;
+    }
+    .about-badge-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .about-content .eyebrow { color: var(--warm-gold); }
+    .about-content h2 { color: var(--white); margin-bottom: 1.25rem; font-style: italic; }
+    .about-content p { color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; }
+    .about-content .btn-outline {
+      border-color: rgba(255,255,255,0.4);
+      color: var(--white);
+    }
+    .about-content .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+    }
+    .about-values {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .about-value {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+    }
+    .about-value svg { width: 18px; height: 18px; fill: var(--warm-gold); }
+
+    /* ─── FAQ ──────────────────────────────────────────── */
+    #faq {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 3rem auto 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.35rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--forest);
+      text-align: left;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--warm-gold); }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .faq-icon svg { width: 12px; height: 12px; fill: var(--forest); transition: transform 0.3s; }
+    .faq-item.open .faq-icon { background: var(--forest); border-color: var(--forest); }
+    .faq-item.open .faq-icon svg { fill: var(--white); transform: rotate(45deg); }
+    .faq-answer {
+      display: none;
+      padding-bottom: 1.35rem;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ─── Contact ──────────────────────────────────────── */
+    #contact {
+      padding: 7rem 0;
+      background: var(--beige);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    .contact-info h2 { color: var(--forest); margin-bottom: 1rem; }
+    .contact-info p { margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--forest); }
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .contact-link-icon svg { width: 18px; height: 18px; fill: var(--forest); }
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--cream);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-control:focus { border-color: var(--forest); background: var(--white); }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .form-grid { grid-template-columns: 1fr; } }
+
+    /* ─── Footer ───────────────────────────────────────── */
+    #footer {
+      background: var(--brown);
+      color: rgba(255,255,255,0.7);
+      padding: 4rem 0 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    .footer-brand .nav-logo { margin-bottom: 1rem; display: block; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 260px; }
+    .footer-brand .nav-logo span { color: var(--warm-gold); }
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--warm-gold); }
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .social-btn svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); }
+    .social-btn:hover {
+      background: var(--warm-gold);
+      border-color: var(--warm-gold);
+    }
+    .social-btn:hover svg { fill: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .footer-bottom-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-bottom-links a:hover { color: var(--warm-gold); }
+
+    /* ─── Utility ──────────────────────────────────────── */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mt-3 { margin-top: 1.5rem; }
+
+    /* ─── Sticky CTA banner ────────────────────────────── */
+    #sticky-cta {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    #sticky-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .sticky-shop-btn {
+      background: var(--forest);
+      color: var(--white);
+      border-radius: 50px;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(43,58,39,0.35);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+    .sticky-shop-btn:hover {
+      background: var(--warm-gold);
+      transform: translateY(-2px);
+    }
+    .sticky-shop-btn svg { width: 16px; height: 16px; fill: var(--white); }
+
+    @media (max-width: 480px) {
+      #sticky-cta { bottom: 1rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav-logo">Light By <span>U</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#routine">Routine</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta"><a href="https://www.lightbyyou.ca/category/all-products" target="_blank" rel="noopener" class="btn btn-primary">Shop Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <section id="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        Made in Canada · Fragrance-Free · Sensitive Skin Approved
+      </div>
+      <h1>Glow From<br><em>Within</em></h1>
+      <p>Simple, effective skincare that brings out your natural radiance — powered by Hyaluronic Acid, Ceramides, and botanical actives.</p>
+      <div class="hero-actions">
+        <a href="https://www.lightbyyou.ca/category/all-products" target="_blank" rel="noopener" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          Shop the Collection
+        </a>
+        <a href="#products" class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.5)">Explore Products</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ─── Trust Bar ─── -->
+  <div id="trust" role="complementary" aria-label="Brand credentials">
+    <div class="trust-track" aria-hidden="true">
+      <!-- duplicated for seamless loop -->
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Made in Canada</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2h6c-.3 4-4 8-4 8 5 0 8-7 8-7s-3 3.28-11 .15A4.5 4.5 0 007.84 16l3.62-3.62L12 11z"/></svg>Fragrance-Free</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9H3c0 4.97 4.03 9 9 9zm0-18C6.48 4 2 8.48 2 14h20c0-5.52-4.48-10-10-10z"/></svg>Sensitive Skin Friendly</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>Dermatologist Approved</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.9★ Average Rating</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>Free Shipping Over $65</div>
+      <!-- duplicate set for seamless loop -->
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Made in Canada</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2h6c-.3 4-4 8-4 8 5 0 8-7 8-7s-3 3.28-11 .15A4.5 4.5 0 007.84 16l3.62-3.62L12 11z"/></svg>Fragrance-Free</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9H3c0 4.97 4.03 9 9 9zm0-18C6.48 4 2 8.48 2 14h20c0-5.52-4.48-10-10-10z"/></svg>Sensitive Skin Friendly</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>Dermatologist Approved</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4.9★ Average Rating</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>Free Shipping Over $65</div>
+    </div>
+  </div>
+
+  <!-- ─── Brand Promise ─── -->
+  <section id="promise" class="section">
+    <div class="container">
+      <div class="promise-text reveal">
+        <span class="eyebrow">Our Philosophy</span>
+        <h2>Skincare that works<br>as hard as you do.</h2>
+        <p>At Light By U, we believe great skin shouldn't be complicated. Every formula is crafted with purposeful, science-backed ingredients — nothing unnecessary, nothing hidden.</p>
+        <a href="#products" class="btn btn-primary">Discover Our Range</a>
+      </div>
+      <div class="promise-pillars">
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          </div>
+          <h3>Clean Formula</h3>
+          <p>No parabens, sulfates, or artificial fragrances. Only ingredients your skin will love.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5S18.33 12 17.5 12z"/></svg>
+          </div>
+          <h3>Made in Canada</h3>
+          <p>Proudly formulated and manufactured right here in Canada with rigorous quality standards.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9H3c0 4.97 4.03 9 9 9zm0-18C6.48 4 2 8.48 2 14h20c0-5.52-4.48-10-10-10z"/></svg>
+          </div>
+          <h3>Sensitive Skin Safe</h3>
+          <p>Every product is fragrance-free and hypoallergenic — designed for even the most reactive skin types.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-4">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+          <h3>Clinically Tested</h3>
+          <p>Formulas tested for efficacy and tolerability — results you can see, confidence you can feel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Products ─── -->
+  <section id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">The Collection</span>
+        <h2>Your Complete<br>Skincare Ritual</h2>
+        <p>Nine expertly-crafted formulas for every step of your routine — from cleanse to glow.</p>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <img src="assets/images/product-cleanser.png" alt="Gentle Facial Cleanser 100ml" loading="lazy" />
+            <span class="product-tag">Step 1</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Gentle Facial Cleanser</div>
+            <div class="product-size">100 ml</div>
+            <p class="product-desc">A soft, pH-balanced cleanser that removes impurities without stripping the skin barrier. Perfect for daily use.</p>
+            <div class="product-footer">
+              <div class="product-price">C$18.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/gentle-facial-cleanser-100ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Gentle Facial Cleanser">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <img src="assets/images/product-toner.png" alt="Radiance Complex Toner 50ml" loading="lazy" />
+            <span class="product-tag">Step 2</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Radiance Complex Toner</div>
+            <div class="product-size">50 ml</div>
+            <p class="product-desc">Balances and preps skin post-cleanse. Infused with brightening actives that reveal your natural luminosity.</p>
+            <div class="product-footer">
+              <div class="product-price">C$21.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/radiance-complex-toner-50ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Radiance Complex Toner">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <img src="assets/images/product-hydroboost.png" alt="Daily Hydroboost Serum" loading="lazy" />
+            <span class="product-tag">Best Seller</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Daily Hydroboost Serum</div>
+            <div class="product-size">30 ml</div>
+            <p class="product-desc">Intense hydration in every drop. Hyaluronic Acid complex draws moisture deep into the skin for a plump, dewy finish.</p>
+            <div class="product-footer">
+              <div class="product-price">C$26.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/daily-hydroboost-serum" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Daily Hydroboost Serum">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <img src="assets/images/product-brightening.png" alt="Profumix Brightening Serum 30ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Profumix Brightening Serum</div>
+            <div class="product-size">30 ml</div>
+            <p class="product-desc">Targets uneven skin tone, dark spots, and dullness. Advanced brightening complex restores glow and clarity.</p>
+            <div class="product-footer">
+              <div class="product-price">C$28.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/profumix-brigtening-serum-30ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Profumix Brightening Serum">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <img src="assets/images/product-balancing.png" alt="Complexion Balancing Serum 30ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Complexion Balancing Serum</div>
+            <div class="product-size">30 ml</div>
+            <p class="product-desc">Harmonizes oil production and refines pores. Ideal for combination or blemish-prone skin seeking equilibrium.</p>
+            <div class="product-footer">
+              <div class="product-price">C$24.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/complexion-balancing-serum-30ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Complexion Balancing Serum">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <img src="assets/images/product-moisturizer.jpg" alt="Moisturizer Cream 100ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Moisturizer Cream</div>
+            <div class="product-size">100 ml</div>
+            <p class="product-desc">Extremely hydrating daily moisturizer with Hyaluronic Acid and Ceramides. Fragrance-free, ideal for sensitive skin.</p>
+            <div class="product-footer">
+              <div class="product-price"><span class="was">C$22.00</span>C$19.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/moisturizer-cream" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Moisturizer Cream">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <img src="assets/images/product-rich-cream.png" alt="Rich Face Cream 50ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Rich Face Cream</div>
+            <div class="product-size">50 ml</div>
+            <p class="product-desc">Deeply nourishing formula for dry or mature skin. Restores softness and suppleness with a luxuriously rich texture.</p>
+            <div class="product-footer">
+              <div class="product-price">C$23.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/rich-face-cream-50ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Rich Face Cream">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <img src="assets/images/product-eye-cream.png" alt="Dynamic Firming Eye Cream 15ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Dynamic Firming Eye Cream</div>
+            <div class="product-size">15 ml</div>
+            <p class="product-desc">Targets fine lines, puffiness, and dark circles. Firms the delicate eye area for a bright, well-rested look.</p>
+            <div class="product-footer">
+              <div class="product-price">C$27.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/dynamic-firming-eye-cream-15ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Dynamic Firming Eye Cream">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <img src="assets/images/product-scrub.png" alt="Biocloud Scrub 50ml" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <div class="product-name">Biocloud Scrub</div>
+            <div class="product-size">50 ml</div>
+            <p class="product-desc">Cloud-like exfoliating scrub that gently resurfaces skin. Removes dead cells and promotes a smooth, radiant complexion.</p>
+            <div class="product-footer">
+              <div class="product-price">C$22.99</div>
+              <a href="https://www.lightbyyou.ca/product-page/biocloud-scrub-50ml" target="_blank" rel="noopener" class="product-btn" aria-label="Shop Biocloud Scrub">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="https://www.lightbyyou.ca/category/all-products" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:2rem">
+          View All Products
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Routine ─── -->
+  <section id="routine">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">How to Use</span>
+        <h2>Build Your Perfect<br>Daily Ritual</h2>
+        <p>Simple steps, extraordinary results. A consistent routine is the secret to lasting, healthy glow.</p>
+      </div>
+      <div class="routine-steps">
+        <div class="step reveal reveal-delay-1">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 5.01 13.99 3 11.5 3S7 5.01 7 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/></svg>
+          </div>
+          <h3>Cleanse</h3>
+          <p>Begin with the Gentle Facial Cleanser to remove impurities and prepare your skin for treatment.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-icon" style="margin-top:1rem">
+            <svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg>
+          </div>
+          <div class="step-number" style="margin-top:-0.5rem">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2h6c-.3 4-4 8-4 8 5 0 8-7 8-7s-3 3.28-11 .15A4.5 4.5 0 007.84 16l3.62-3.62L12 11z"/></svg>
+          </div>
+          <h3>Tone &amp; Treat</h3>
+          <p>Apply toner, then layer your targeted serums — hydrating, brightening, or balancing based on your skin's needs.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5S18.33 12 17.5 12z"/></svg>
+          </div>
+          <h3>Moisturize &amp; Protect</h3>
+          <p>Seal it all in with your Moisturizer or Rich Face Cream. Don't forget the Dynamic Eye Cream for the delicate eye zone.</p>
+        </div>
+        <div class="step reveal reveal-delay-4">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Glow</h3>
+          <p>Weekly: use the Biocloud Scrub to resurface and reveal fresh, luminous skin. Your glow, amplified.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Social Proof ─── -->
+  <section id="social-proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Real Results</span>
+        <h2>Loved by<br>Thousands of Canadians</h2>
+      </div>
+
+      <div class="rating-summary reveal">
+        <div class="rating-big">4.9</div>
+        <div class="stars rating-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="rating-count">Based on 500+ verified customer reviews</div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal reveal-delay-1">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="review-text">"My skin has never felt so hydrated. The Moisturizer Cream is genuinely life-changing — and the fact that it's fragrance-free means no breakouts for my sensitive skin."</div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <div class="reviewer-name">Sophie M.</div>
+              <div class="reviewer-info">Toronto, ON</div>
+              <div class="review-tag">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Verified Purchase
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal reveal-delay-2">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="review-text">"The Brightening Serum has noticeably reduced my dark spots in just 3 weeks. I love that it's Canadian-made with real, clean ingredients."</div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">A</div>
+            <div>
+              <div class="reviewer-name">Aisha K.</div>
+              <div class="reviewer-info">Vancouver, BC</div>
+              <div class="review-tag">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Verified Purchase
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal reveal-delay-3">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="review-text">"Finally a brand that actually delivers on its promises! The Eye Cream firmed up my under-eyes in two weeks. Affordable, effective, and made right here in Canada."</div>
+          <div class="reviewer">
+            <div class="reviewer-avatar">M</div>
+            <div>
+              <div class="reviewer-name">Marie-Ève L.</div>
+              <div class="reviewer-info">Montréal, QC</div>
+              <div class="review-tag">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Verified Purchase
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── About ─── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img-wrap reveal">
+          <img src="assets/images/lifestyle-2.png" alt="Light By U skincare products laid out naturally" loading="lazy" />
+          <div class="about-badge">
+            <div class="about-badge-num">9+</div>
+            <div class="about-badge-label">Products</div>
+          </div>
+        </div>
+        <div class="about-content reveal reveal-delay-2">
+          <span class="eyebrow">Our Story</span>
+          <h2>Simple Skincare.<br>Real Glow.</h2>
+          <p>At Light By U, we started with one belief: skincare should be simple, honest, and effective. No complicated 12-step routines, no ingredient lists you can't pronounce.</p>
+          <p>Every formula we make is thoughtfully crafted in Canada, with ingredients chosen for results — not marketing. Hyaluronic Acid for deep hydration, Ceramides to strengthen your skin barrier, and botanical actives to restore your natural radiance.</p>
+          <p>Because your glow isn't something to be added — it's already there. We just help you reveal it.</p>
+          <div class="about-values">
+            <div class="about-value">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Clean Ingredients
+            </div>
+            <div class="about-value">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Made in Canada
+            </div>
+            <div class="about-value">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Cruelty-Free
+            </div>
+            <div class="about-value">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Fragrance-Free
+            </div>
+          </div>
+          <a href="https://www.lightbyyou.ca/about" target="_blank" rel="noopener" class="btn btn-outline">Our Full Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Have Questions?</span>
+        <h2>Frequently Asked<br>Questions</h2>
+        <p>Everything you need to know about our products, ingredients, and shipping.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Are Light By U products suitable for sensitive skin?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">Yes! All of our formulas are fragrance-free, hypoallergenic, and specifically designed with sensitive skin in mind. We avoid common irritants like parabens, sulfates, and artificial fragrances. We always recommend doing a patch test if you're introducing new products.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are your products made?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">We're proudly Canadian! All Light By U products are formulated and manufactured in Canada to the highest quality standards. Supporting local means fresher formulas and a smaller carbon footprint.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How long will it take to see results?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">Most customers notice improved hydration and skin texture within the first 1–2 weeks of consistent use. For targeted treatments like our Brightening Serum or Eye Cream, visible changes typically appear within 3–6 weeks of daily application.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I use multiple serums together?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">Absolutely. Our serums are formulated to work synergistically. A popular combination is the Daily Hydroboost Serum followed by the Profumix Brightening Serum. Apply from thinnest to thickest consistency, and always finish with your moisturizer.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your shipping policy?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">We offer free shipping on Canadian orders over C$65. Standard shipping typically takes 3–7 business days. We also ship internationally — rates and timelines vary by destination. All orders are processed within 1–2 business days.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your return policy?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">We want you to love your Light By U products. If you're not satisfied, please contact us within 30 days of receiving your order. We'll work with you to find a solution — whether that's an exchange, credit, or refund for unused/minimally used products.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are your products vegan and cruelty-free?
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></span>
+          </button>
+          <div class="faq-answer">Yes! Light By U products are cruelty-free — we never test on animals. Our formulas are also free of animal-derived ingredients, making them suitable for vegan skincare routines.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>We'd Love<br>to Hear From You</h2>
+          <p>Have a question about our products, your order, or just want to say hi? We're here for it.</p>
+          <div class="contact-links">
+            <a href="https://www.lightbyyou.ca/contact" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              Contact via our website
+            </a>
+            <a href="https://www.lightbyyou.ca" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              </div>
+              www.lightbyyou.ca
+            </a>
+          </div>
+        </div>
+        <div class="contact-form reveal reveal-delay-2">
+          <h3 style="font-family:'Cormorant Garamond',serif;color:var(--forest);margin-bottom:1.5rem;">Send Us a Message</h3>
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Last name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" class="form-control">
+                <option value="">Select a topic…</option>
+                <option>Product Questions</option>
+                <option>Order Status</option>
+                <option>Returns &amp; Exchanges</option>
+                <option>Wholesale Enquiries</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              Send Message
+              <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+            <div id="form-success" style="display:none;margin-top:1rem;padding:0.85rem;background:#e8f5e9;border-radius:8px;font-size:0.88rem;color:#2B3A27;text-align:center;">
+              Thank you! We'll be in touch within 1–2 business days.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">Light By <span>U</span></a>
+          <p>Simple, effective skincare that brings out your natural glow. Proudly made in Canada.</p>
+          <div class="footer-social">
+            <a href="https://www.lightbyyou.ca" target="_blank" rel="noopener" class="social-btn" aria-label="Website">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </a>
+            <a href="https://www.lightbyyou.ca" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="https://www.lightbyyou.ca/product-page/gentle-facial-cleanser-100ml" target="_blank" rel="noopener">Cleanser</a></li>
+            <li><a href="https://www.lightbyyou.ca/product-page/radiance-complex-toner-50ml" target="_blank" rel="noopener">Toner</a></li>
+            <li><a href="https://www.lightbyyou.ca/product-page/daily-hydroboost-serum" target="_blank" rel="noopener">Serums</a></li>
+            <li><a href="https://www.lightbyyou.ca/product-page/moisturizer-cream" target="_blank" rel="noopener">Moisturizers</a></li>
+            <li><a href="https://www.lightbyyou.ca/product-page/dynamic-firming-eye-cream-15ml" target="_blank" rel="noopener">Eye Cream</a></li>
+            <li><a href="https://www.lightbyyou.ca/product-page/biocloud-scrub-50ml" target="_blank" rel="noopener">Exfoliants</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://www.lightbyyou.ca/about" target="_blank" rel="noopener">About Us</a></li>
+            <li><a href="https://www.lightbyyou.ca/blog" target="_blank" rel="noopener">Blog</a></li>
+            <li><a href="https://www.lightbyyou.ca/contact" target="_blank" rel="noopener">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://www.lightbyyou.ca/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://www.lightbyyou.ca/terms-of-use" target="_blank" rel="noopener">Terms of Use</a></li>
+            <li><a href="https://www.lightbyyou.ca/contact" target="_blank" rel="noopener">Shipping Policy</a></li>
+            <li><a href="https://www.lightbyyou.ca/contact" target="_blank" rel="noopener">Returns &amp; Exchanges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Light By U. All rights reserved. Proudly Canadian.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="https://www.lightbyyou.ca/privacy-policy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://www.lightbyyou.ca/terms-of-use" target="_blank" rel="noopener">Terms</a></li>
+          <li><a href="https://www.lightbyyou.ca/contact" target="_blank" rel="noopener">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Sticky CTA ─── -->
+  <div id="sticky-cta" aria-hidden="true">
+    <a href="https://www.lightbyyou.ca/category/all-products" target="_blank" rel="noopener" class="sticky-shop-btn">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.9 18 9 18h12v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.25 5H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+      Shop Now
+    </a>
+  </div>
+
+  <script>
+    // ─── Nav scroll effect ───────────────────────────────
+    const nav = document.getElementById('nav');
+    const stickyCta = document.getElementById('sticky-cta');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 60);
+      stickyCta.classList.toggle('visible', y > 400);
+    }, { passive: true });
+
+    // ─── Mobile nav toggle ───────────────────────────────
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // ─── Scroll reveal (Intersection Observer) ───────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer  = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ─── FAQ accordion ───────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item    = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // ─── Contact form (demo) ─────────────────────────────
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => {
+        document.getElementById('form-success').style.display = 'none';
+      }, 5000);
+    }
+
+    // ─── Smooth anchor links ─────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

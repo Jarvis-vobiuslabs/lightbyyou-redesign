@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2B3A27"/>
+      <stop offset="60%" style="stop-color:#3A4A35"/>
+      <stop offset="100%" style="stop-color:#3A2C1F"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#B89A6A"/>
+      <stop offset="100%" style="stop-color:#C8B080"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#B89A6A;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#B89A6A;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="950" cy="315" r="280" fill="none" stroke="#B89A6A" stroke-width="1" opacity="0.15"/>
+  <circle cx="950" cy="315" r="200" fill="none" stroke="#B89A6A" stroke-width="1" opacity="0.12"/>
+  <circle cx="950" cy="315" r="120" fill="#B89A6A" opacity="0.06"/>
+
+  <!-- Left accent line -->
+  <rect x="80" y="140" width="3" height="350" fill="url(#gold)" rx="2"/>
+
+  <!-- Logo mark -->
+  <circle cx="120" cy="80" r="28" fill="#B89A6A" opacity="0.2"/>
+  <text x="120" y="88" font-family="Georgia, serif" font-size="28" fill="#B89A6A" text-anchor="middle" font-weight="400">L</text>
+  <circle cx="120" cy="80" r="24" fill="none" stroke="#B89A6A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Brand name -->
+  <text x="160" y="72" font-family="Georgia, serif" font-size="22" fill="rgba(255,255,255,0.9)" letter-spacing="3" font-weight="300">Light By</text>
+  <text x="310" y="72" font-family="Georgia, serif" font-size="22" fill="#B89A6A" letter-spacing="3">U</text>
+
+  <!-- Divider -->
+  <rect x="160" y="84" width="200" height="1" fill="rgba(184,154,106,0.4)"/>
+
+  <!-- Main headline -->
+  <text x="110" y="230" font-family="Georgia, serif" font-size="72" fill="white" font-weight="300" letter-spacing="-1">Simple.</text>
+  <text x="110" y="310" font-family="Georgia, serif" font-size="72" fill="white" font-weight="300" letter-spacing="-1" font-style="italic">Effective.</text>
+  <text x="110" y="390" font-family="Georgia, serif" font-size="72" fill="url(#gold)" font-weight="300" letter-spacing="-1">Natural Glow.</text>
+
+  <!-- Subtext -->
+  <text x="110" y="450" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.65)" letter-spacing="1.5" font-weight="300">SKINCARE · MADE IN CANADA · FRAGRANCE-FREE</text>
+
+  <!-- CTA badge -->
+  <rect x="110" y="490" width="220" height="48" rx="24" fill="#B89A6A" opacity="0.9"/>
+  <text x="220" y="520" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" letter-spacing="2" font-weight="600">SHOP NOW</text>
+
+  <!-- URL -->
+  <text x="110" y="590" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.4)" letter-spacing="1">lightbyyou.ca</text>
+
+  <!-- Right decorative element - abstract product silhouette -->
+  <ellipse cx="950" cy="315" rx="65" ry="120" fill="#B89A6A" opacity="0.12" rx="65"/>
+  <rect x="905" y="170" width="30" height="290" rx="15" fill="#B89A6A" opacity="0.15"/>
+  <rect x="955" y="210" width="30" height="250" rx="15" fill="#B89A6A" opacity="0.10"/>
+  <rect x="1005" y="195" width="30" height="265" rx="15" fill="#B89A6A" opacity="0.13"/>
+
+  <!-- Subtle grid pattern overlay -->
+  <line x1="0" y1="629" x2="1200" y2="629" stroke="rgba(184,154,106,0.2)" stroke-width="1"/>
+</svg>
